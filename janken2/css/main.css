@@ -1,0 +1,198 @@
+/* 共通 */
+body{
+    width: 1200px;
+    margin: auto;
+}
+.img_height100{
+    height: 100px;
+}
+.img_height150{
+    height: 150px;
+}
+li{
+    list-style:none
+}
+.hover1:hover{
+    cursor: pointer;
+    opacity:0.6;
+}
+.hover1:active{
+    -webkit-transform: translate(0,2px);
+	-moz-transform: translate(0,2px);
+	transform: translate(0,2px);
+	border-bottom:none;
+}
+
+/* header */
+/* .header_wrapper{
+    margin-bottom: 20px;
+} */
+.header_container{
+    display: flex;
+    justify-content: space-between;
+}
+.header_rogo{
+    display: flex;
+    font-size: 1rem;
+    height: 100px;
+}
+.header_img{
+    margin-right: 20px;
+}
+.header_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #000000;
+    margin-right: 20px;
+}
+.header_start_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000000;
+    background-color: #ffc1ff;
+    text-align: center;
+    width: 200px;
+}
+.header_menu{
+    display: flex;
+}
+.header_menu>p{
+    /* box-sizing: border-box; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+}
+
+/* main battlefield */
+.battlefield_wrapper{
+    display: flex;
+    border: #666;
+    border-style: solid;
+    height: 300px;
+    margin-bottom: 20px;
+}
+.battlefield_enemy_castle{
+    width: 120px;
+    height: 230px;
+    overflow: hidden;
+    object-fit: contain;
+}
+.battlefield_enemy_score{
+    width: 120px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+.battlefield_mycat_castle{
+    width: 120px;
+    height: 230px;
+    overflow: hidden;
+    object-fit: contain;
+}
+.battlefield_mycat_score{
+    width: 120px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+.attack_mycat_container{
+    display: flex;
+}
+.attack_enemy_container{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+.attack_item{
+    width: 120px;
+    height: 150px;
+    overflow: hidden;
+}
+
+/* main select */
+.select_title{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.select_title>div{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.select_wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.select_enemy_container{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 540px;
+}
+.select_enemy_gu{
+    width: 180px;
+    overflow: hidden;
+}
+.select_enemy_cho{
+    width: 180px;
+    overflow: hidden;
+}
+.select_enemy_par{
+    width: 180px;
+    overflow: hidden;
+}
+.select_mycat_container{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 540px;
+}
+.select_mycat_gu{
+    width: 180px;
+    overflow: hidden;
+}
+.select_mycat_cho{
+    width: 180px;
+    overflow: hidden;
+}
+.select_mycat_par   {
+    width: 180px;
+    overflow: hidden;
+}
+.guuchopar{
+    width: 150px;
+    overflow: hidden;
+    margin: 0 15px;
+}
+
+/* main result */
+/* .result_wrapper{
+    text-align: center;
+}
+.result_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.result_title{
+    font-size: 2rem;
+    width: 300px;
+}
+.reslut_item{
+    width: 600px;
+} */
+
+/* footer */

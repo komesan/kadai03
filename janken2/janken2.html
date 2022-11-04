@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>じゃんけん</title>
+</head>
+
+<body>
+
+    <header class="header_wrapper">
+        <div class="header_container">
+            <div class="header_rogo">
+                <img src="img/header.jpeg" alt="" class="header_img">
+                <p class="header_title">にゃんこジャンケン</p>
+                <p class="header_start_btn hover1">ゲーム<br>スタート</p>
+            </div>
+            <div class="header_menu">
+                <p>おたすけ ▷</p>
+                <p class="header_menu_1"><img src="img/nekocan.jpeg" alt="" class="img_height100 hover1"></p>
+                <p class="header_menu_2"><img src="img/nekocan.jpeg" alt="" class="img_height100 hover1"></p>
+                <p class="header_menu_3"><img src="img/nekocan.jpeg" alt="" class="img_height100 hover1"></p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="battlefield_wrapper">
+            <div>
+                <img src="img/enemy_castle.png" alt="" class="battlefield_enemy_castle">
+                <div class="battlefield_enemy_score">勝ち <span id="lose">0</span>回</div>
+            </div>
+            <div class="attack_wrapper">
+                <div class="attack_mycat_container">
+                    <div class="attack_mycat_1 attack_item"></div>
+                    <div class="attack_mycat_2 attack_item"></div>
+                    <div class="attack_mycat_3 attack_item"></div>
+                    <div class="attack_mycat_4 attack_item"></div>
+                    <div class="attack_mycat_5 attack_item"></div>
+                    <div class="attack_mycat_6 attack_item"></div>
+                    <div class="attack_mycat_7 attack_item"></div>
+                    <div class="attack_mycat_8 attack_item"></div>
+                </div>
+                <div class="attack_enemy_container">
+                    <div class="attack_enemy_1 attack_item"></div>
+                    <div class="attack_enemy_2 attack_item"></div>
+                    <div class="attack_enemy_3 attack_item"></div>
+                    <div class="attack_enemy_4 attack_item"></div>
+                    <div class="attack_enemy_5 attack_item"></div>
+                    <div class="attack_enemy_6 attack_item"></div>
+                    <div class="attack_enemy_7 attack_item"></div>
+                    <div class="attack_enemy_8 attack_item"></div>
+                </div>
+            </div>
+            <div>
+                <img src="img/mycat_castle.jpeg" alt="" class="battlefield_mycat_castle">
+                <div class="battlefield_mycat_score">勝ち <span id="win">0</span>回</div>
+            </div>
+        </div>
+
+        <div class="select_title">
+            <div class="score">テキのにゃんこ</div>
+            <div class="score">じぶんのにゃんこ</div>
+        </div>
+        <div class="select_wrapper">
+            <div class="select_enemy_container">
+                <img src="img/guu.jpeg" alt="" class="img_height100 guuchopar enemy_gu">
+                <img src="img/cho.jpeg" alt="" class="img_height100 guuchopar enemy_cho">
+                <img src="img/par.jpeg" alt="" class="img_height100 guuchopar enemy_par">
+                <img src="" alt="" class="img_height150 select_enemy_gu img">
+                <img src="" alt="" class="img_height150 select_enemy_cho img">
+                <img src="" alt="" class="img_height150 select_enemy_par img">
+            </div>
+            <div class="select_mycat_container">
+                <img src="img/guu.jpeg" alt="" class="img_height100 guuchopar hover1 mycat_gu">
+                <img src="img/cho.jpeg" alt="" class="img_height100 guuchopar hover1 mycat_cho">
+                <img src="img/par.jpeg" alt="" class="img_height100 guuchopar hover1 mycat_par">
+                <img src="" alt="" class="img_height150 select_mycat_gu img">
+                <img src="" alt="" class="img_height150 select_mycat_cho img">
+                <img src="" alt="" class="img_height150 select_mycat_par img">
+            </div>
+        </div>
+        <!-- <div class="result_wrapper">
+            <div class="result_container">
+                <p class="result_title">勝敗</p>
+                <p class="reslut_item">ここに勝敗を表示</p>
+            </div>
+        </div> -->
+
+
+    </main>
+
+    <footer></footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/janken2.js"></script>
+   
+</body>
+
+</html>
