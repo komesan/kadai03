@@ -1,17 +1,17 @@
 // alert(1111);
 
 // じぶんのグーの変数
-const imgs_my_gu = ['cat01.png', 'cat02.png', 'cat03.png', 'cat04.jpeg', 'cat05.JPEG', 'cat06.png', 'cat07.jpeg', 'cat08.jpeg', 'cat09.jpeg', 'cat10.jpeg'];  // 画像ファイル名
+const imgs_my_gu = ['cat01.png', 'cat02.png', 'cat03.png', 'cat04.jpeg', 'cat05.jpeg', 'cat06.png', 'cat07.jpeg', 'cat08.jpeg', 'cat09.jpeg', 'cat10.jpeg'];  // 画像ファイル名
 let index_my_gu = 0;  // インデックス番号
 $('.select_mycat_gu').attr('src', 'img/' + imgs_my_gu[index_my_gu]);
 
 // じぶんのチョキの変数
-const imgs_my_cho = ['cat01.png', 'cat02.png', 'cat03.png', 'cat04.jpeg', 'cat05.JPEG', 'cat06.png', 'cat07.jpeg', 'cat08.jpeg', 'cat09.jpeg', 'cat10.jpeg'];  // 画像ファイル名
+const imgs_my_cho = ['cat01.png', 'cat02.png', 'cat03.png', 'cat04.jpeg', 'cat05.jpeg', 'cat06.png', 'cat07.jpeg', 'cat08.jpeg', 'cat09.jpeg', 'cat10.jpeg'];  // 画像ファイル名
 let index_my_cho = 0;  // インデックス番号
 $('.select_mycat_cho').attr('src', 'img/' + imgs_my_cho[index_my_cho]);
 
 // じぶんのパーの変数
-const imgs_my_par = ['cat01.png', 'cat02.png', 'cat03.png', 'cat04.jpeg', 'cat05.JPEG', 'cat06.png', 'cat07.jpeg', 'cat08.jpeg', 'cat09.jpeg', 'cat10.jpeg'];  // 画像ファイル名
+const imgs_my_par = ['cat01.png', 'cat02.png', 'cat03.png', 'cat04.jpeg', 'cat05.jpeg', 'cat06.png', 'cat07.jpeg', 'cat08.jpeg', 'cat09.jpeg', 'cat10.jpeg'];  // 画像ファイル名
 let index_my_par = 0;  // インデックス番号
 $('.select_mycat_par').attr('src', 'img/' + imgs_my_par[index_my_par]);
 
@@ -39,6 +39,35 @@ let win_count_mycat = 0;
 let win_item_mycat = 0;
 let win_count_enemy = 0;
 let win_item_enemy = 0;
+let icon_on = function() {
+        $(".mycat_gu").fadeTo("fast",1);
+        $(".select_mycat_gu").fadeTo("fast",1);
+        $(".mycat_cho").fadeTo("fast",1);
+        $(".select_mycat_cho").fadeTo("fast",1);
+        $(".mycat_par").fadeTo("fast",0.5);
+        $(".select_mycat_par").fadeTo("fast",1);
+        $(".enemy_gu").fadeTo("fast",1);
+        $(".select_enemy_gu").fadeTo("fast",1);
+        $(".enemy_cho").fadeTo("fast",1);
+        $(".select_enemy_cho").fadeTo("fast",1);
+        $(".enemy_par").fadeTo("fast",1);
+        $(".select_enemy_par").fadeTo("fast",1);
+}
+let random_cat = function() {
+    // ランダムでネコをセレクトする
+    index_my_gu = Math.floor(Math.random() * 11);
+    $('.select_mycat_gu').attr('src', 'img/' + imgs_my_gu[index_my_gu]);
+    index_my_cho = Math.floor(Math.random() * 11);
+    $('.select_mycat_cho').attr('src', 'img/' + imgs_my_cho[index_my_cho]);
+    index_my_par = Math.floor(Math.random() * 11);
+    $('.select_mycat_par').attr('src', 'img/' + imgs_my_par[index_my_par]);
+    index_ene_gu = Math.floor(Math.random() * 11);
+    $('.select_enemy_gu').attr('src', 'img/' + imgs_ene_gu[index_ene_gu]);
+    index_ene_cho = Math.floor(Math.random() * 11);
+    $('.select_enemy_cho').attr('src', 'img/' + imgs_ene_cho[index_ene_cho]);
+    index_ene_par = Math.floor(Math.random() * 11);
+    $('.select_enemy_par').attr('src', 'img/' + imgs_ene_par[index_ene_par]);
+}
 
 
 // let select_mycat_gu = "";
@@ -76,26 +105,13 @@ $(".header_start_btn").on('click' , function(){
     start_btn = "go";
     console.log(start_btn);
     alert("ゲームスタート!!");
-
-    // ランダムでネコをセレクトする
-    index_my_gu = Math.floor(Math.random() * 11);
-    $('.select_mycat_gu').attr('src', 'img/' + imgs_my_gu[index_my_gu]);
-    index_my_cho = Math.floor(Math.random() * 11);
-    $('.select_mycat_cho').attr('src', 'img/' + imgs_my_cho[index_my_cho]);
-    index_my_par = Math.floor(Math.random() * 11);
-    $('.select_mycat_par').attr('src', 'img/' + imgs_my_par[index_my_par]);
-    index_ene_gu = Math.floor(Math.random() * 11);
-    $('.select_enemy_gu').attr('src', 'img/' + imgs_ene_gu[index_ene_gu]);
-    index_ene_cho = Math.floor(Math.random() * 11);
-    $('.select_enemy_cho').attr('src', 'img/' + imgs_ene_cho[index_ene_cho]);
-    index_ene_par = Math.floor(Math.random() * 11);
-    $('.select_enemy_par').attr('src', 'img/' + imgs_ene_par[index_ene_par]);
+    setTimeout(random_cat, 1000);
     }
 });
 
 // じぶんがグーをえらぶ
 $(".mycat_gu").on('click' , function(){
-    select_enemy = Math.floor(Math.random() * 4);
+    select_enemy = 1 + Math.floor(Math.random() * 3);
     console.log(select_enemy);
     if (select_enemy === 1) {
         // $(".mycat_gu").かわらず
@@ -111,7 +127,11 @@ $(".mycat_gu").on('click' , function(){
         $(".enemy_par").fadeTo("fast",0.5);
         $(".select_enemy_par").fadeTo("fast",0.5);
         // select_enemy = draw;
-        alert("「あいこ」だよ!!");
+        setTimeout(function(){
+            $("mycat_title").text("「あいこ」だよ!!");
+        },1000);
+        // アイコンの表示を元に戻す
+        setTimeout(icon_on, 1000);
     }else if (select_enemy === 2) {
         // $(".mycat_gu").かわらず
         // $(".select_mycat_gu").かわらず
@@ -126,7 +146,9 @@ $(".mycat_gu").on('click' , function(){
         $(".enemy_par").fadeTo("fast",0.5);
         $(".select_enemy_par").fadeTo("fast",0.5);
         // select_enemy = win;
-        alert("「あなたの勝ち」だよ!!");
+        $("mycat_title").text("「あなたの勝ち」だよ!!");
+        // アイコンの表示を元に戻す
+        setTimeout(icon_on, 1000);
         win_count_mycat++;
         // console.log(win_count[mycat]);
         // console.log(select_enemy);
@@ -144,7 +166,9 @@ $(".mycat_gu").on('click' , function(){
         // $(".enemy_par").かわらず
         // $(".select_enemy_par").かわらず
         // select_enemy = lose;
-        alert("「あなたの負け」だよ!!");
+        $("mycat_title").text("「あなたの負け」だよ!!");
+        // アイコンの表示を元に戻す
+        setTimeout(icon_on, 1000);
         win_count_enemy++;
         // console.log(win_count[mycat]);
         // console.log(select_enemy);
@@ -157,7 +181,7 @@ $(".mycat_gu").on('click' , function(){
 
 // じぶんがチョキをえらぶ
 $(".mycat_cho").on('click' , function(){
-    select_enemy = Math.floor(Math.random() * 4);
+    select_enemy = 1 + Math.floor(Math.random() * 3);
     console.log(select_enemy);
     if (select_enemy === 1) {
         $(".mycat_gu").fadeTo("fast",0.5);
@@ -173,7 +197,11 @@ $(".mycat_cho").on('click' , function(){
         $(".enemy_par").fadeTo("fast",0.5);
         $(".select_enemy_par").fadeTo("fast",0.5);
         // select_enemy = lose;
-        alert("「あなたの負け」だよ!!");
+        setTimeout(function(){
+            alert("「あなたの負け」だよ!!");
+        },1000);
+        // アイコンの表示を元に戻す
+        setTimeout(icon_on, 1000);
         win_count_enemy++;
     }else if (select_enemy === 2) {
         $(".mycat_gu").fadeTo("fast",0.5);
@@ -189,7 +217,11 @@ $(".mycat_cho").on('click' , function(){
         $(".enemy_par").fadeTo("fast",0.5);
         $(".select_enemy_par").fadeTo("fast",0.5);
         // select_enemy = draw;
-        alert("「あいこ」だよ!!");
+        setTimeout(function(){
+            alert("「あいこ」だよ!!");
+        },1000);
+        // アイコンの表示を元に戻す
+        setTimeout(icon_on, 1000);
     }else if (select_enemy === 3){
         $(".mycat_gu").fadeTo("fast",0.5);
         $(".select_mycat_gu").fadeTo("fast",0.5);
@@ -204,7 +236,11 @@ $(".mycat_cho").on('click' , function(){
         // $(".enemy_par").かわらず
         // $(".select_enemy_par").かわらず
         // select_enemy = win;
-        alert("「あなたの勝ち」だよ!!");
+        setTimeout(function(){
+            alert("「あなたの勝ち」だよ!!");
+        },1000);
+        // アイコンの表示を元に戻す
+        setTimeout(icon_on, 1000);
         win_count_mycat++;
         }
 
@@ -215,7 +251,7 @@ $(".mycat_cho").on('click' , function(){
 
 // じぶんがパーをえらぶ
 $(".mycat_par").on('click' , function(){
-    select_enemy = Math.floor(Math.random() * 4);
+    select_enemy = 1 + Math.floor(Math.random() * 3);
     console.log(select_enemy);
     if (select_enemy === 1) {
         $(".mycat_gu").fadeTo("fast",0.5);
@@ -231,7 +267,11 @@ $(".mycat_par").on('click' , function(){
         $(".enemy_par").fadeTo("fast",0.5);
         $(".select_enemy_par").fadeTo("fast",0.5);
         // select_enemy = win;
-        alert("「あなたの勝ち」だよ!!");
+        setTimeout(function(){
+            alert("「あなたの勝ち」だよ!!");
+        },1000);
+        // アイコンの表示を元に戻す
+        setTimeout(icon_on, 1000);
         win_count_mycat++;
     }else if (select_enemy === 2) {
         $(".mycat_gu").fadeTo("fast",0.5);
@@ -247,7 +287,11 @@ $(".mycat_par").on('click' , function(){
         $(".enemy_par").fadeTo("fast",0.5);
         $(".select_enemy_par").fadeTo("fast",0.5);
         // select_enemy = lose;
-        alert("「あなたの負け」だよ!!");
+        setTimeout(function(){
+            alert("「あなたの負け」だよ!!");
+        },1000);
+        // アイコンの表示を元に戻す
+        setTimeout(icon_on, 1000);
         win_count_enemy++;
     }else if (select_enemy === 3){
         $(".mycat_gu").fadeTo("fast",0.5);
@@ -263,7 +307,11 @@ $(".mycat_par").on('click' , function(){
         // $(".enemy_par").かわらず
         // $(".select_enemy_par").かわらず
         // select_enemy = lose;
-        alert("「あいこ」だよ!!");
+        setTimeout(function(){
+            alert("「あいこ」だよ!!");
+        },1000);
+        // アイコンの表示を元に戻す
+        setTimeout(icon_on, 1000);
         }
 
         // 表示処理
