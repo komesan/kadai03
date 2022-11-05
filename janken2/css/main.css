@@ -108,10 +108,12 @@ li{
 }
 .attack_mycat_container{
     display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
 }
 .attack_enemy_container{
     display: flex;
-    flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
 }
